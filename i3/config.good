@@ -211,25 +211,10 @@ bindsym $mod+p exec "scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+        status_command i3status
 }
 
-
-
 #--[ EXEC ]--#
-
-exec --no-startup-id setxkbmap us
-exec --no-startup-id compton -bc --config ~/.config/compton/config
-exec --no-startup-id conky
-exec --no-startup-id dunst
-exec --no-startup-id xrandr --dpi 144
-# exec --no-startup-id /usr/bin/blueman-applet                 # Bluetooth Manager
-exec --no-startup-id discord                                   # Discord
-exec --no-startup-id rocketchat-desktop                        # Rocket Chat
-exec --no-startup-id messengerfordesktop                       # Messenger
-exec --no-startup-id slack                                     # Slack
-exec --no-startup-id emacs --daemon                            # Emacs Daemon
-exec_always $HOME/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore
 #--[ GAPS and BORDERS ]--#
 
@@ -239,37 +224,6 @@ gaps outer 30
 #smart_borders enable
 new_window none
 for_window [class="^.*"] border pixel 1
-
-# Make TeamViewer windows popup by default
-for_window [class="TeamViewer" instance="TeamViewer"] floating enable
-
-# Disable floating for hangouts
-for_window [class="Google-chrome" \
-            instance="crx_knipolnnllmklapflnccelgolnpehhpl" \
-            window_role="app"] floating disable
-
-for_window [title="^floatme$"] floating enable
-
-assign [class="Google-chrome" \
-        instance="crx_knipolnnllmklapflnccelgolnpehhpl" \
-        window_role="app"] hangouts
-
-assign [class="Steam" instance="Steam"] steam
-
-assign [class="discord" instance="discord"] discord
-
-assign [class="Riot" instance="riot" ] riot
-assign [class="Rocket.Chat+" instance="rocket.chat+"] rocketchat
-assign [class="Messenger for Desktop" instance="messenger for desktop"] messenger
-assign [class="Slack" instance="slack"] slack
-
-# Make TeamViewer windows popup by default
-for_window [class="Steam" instance="Steam"] floating enable
-
-for_window [class="Blueman-manager"] floating enable
-
-for_window [class="Florence" instance="florence" title="florence"] floating enable
-
 #--$template: i3.template
 #--$name: i3.conf
 
