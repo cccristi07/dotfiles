@@ -123,6 +123,24 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -218,7 +236,7 @@ bar {
 
 #--[ EXEC ]--#
 
-exec --no-startup-id setxkbmap us
+exec --no-startup-id setxkbmap ro
 exec --no-startup-id compton -bc --config ~/.config/compton/config
 exec --no-startup-id conky
 exec --no-startup-id dunst
@@ -233,8 +251,8 @@ exec_always $HOME/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore
 #--[ GAPS and BORDERS ]--#
 
-gaps inner 25
-gaps outer 30
+gaps inner 15
+gaps outer 20
 
 #smart_borders enable
 new_window none
@@ -273,8 +291,8 @@ for_window [class="Florence" instance="florence" title="florence"] floating enab
 #--$template: i3.template
 #--$name: i3.conf
 
-gaps inner 20
-gaps outer 15
+gaps inner 10
+gaps outer 10
 
 client.focused          #E57860     #E57860     #FFFFFF     #E57860     #E57860
 client.focused_inactive #222222    #5F676A    #FFFFFF    #5F676A    #5F676A

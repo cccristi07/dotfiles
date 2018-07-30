@@ -83,7 +83,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
+map <C-n> :NERDTreeToggle<CR>
 set nu
 
 set clipboard=unnamedplus
