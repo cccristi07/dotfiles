@@ -54,7 +54,7 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-
+set autoread
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -73,6 +73,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match "/\s\+$/"
 
 set encoding=utf-8
 
+nmap <C-N> :NERDTreeToggle<CR>
 
 call togglebg#map("<F5>")
 
@@ -83,7 +84,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-map <C-n> :NERDTreeToggle<CR>
+
 set nu
 
 set clipboard=unnamedplus
