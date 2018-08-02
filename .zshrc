@@ -103,5 +103,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
-ssh-add ~/.ssh/id_git
+# ssh-add ~/.ssh/id_git
 
