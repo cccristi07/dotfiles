@@ -38,7 +38,7 @@ call vundle#end()            " required
 call plug#begin()
 
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 filetype plugin indent on    " required
 
