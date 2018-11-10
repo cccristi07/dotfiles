@@ -60,6 +60,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  k
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,5 +104,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
-ssh-add ~/.ssh/id_git
+# ssh-add ~/.ssh/id_git
 
